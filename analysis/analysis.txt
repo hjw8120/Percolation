@@ -1,0 +1,67 @@
+Hannah Wang
+hjw16
+
+Copy/Paste from running PercolationStats with these grid sizes: 
+grid sizes of 100, 200, 400, 800, 1600, and 3200
+and using 20 trials
+
+PercolationDFSFast
+
+simulation data for 20 trials
+grid	mean	stddev	total time
+100	0.593	0.014	0.142
+200	0.591	0.010	0.167
+400	0.590	0.006	0.737
+800	0.594	0.004	5.775
+Exception in thread "main" java.lang.StackOverflowError
+	at PercolationDFS.dfs(PercolationDFS.java:108)
+
+PercolationBF
+
+simulation data for 20 trials
+grid	mean	stddev	total time
+100	0.593	0.014	0.177
+200	0.591	0.010	0.254
+400	0.590	0.006	0.901
+800	0.594	0.004	5.859
+1600	0.592	0.002	31.420
+3200	0.593	0.001	224.654
+
+PercolationUF with QuickUWPC
+
+simulation data for 10 trials
+grid	mean	stddev	total time
+100	0.593	0.019	0.091
+200	0.596	0.006	0.219
+400	0.592	0.006	0.563
+800	0.592	0.003	2.368
+1600	0.594	0.002	13.905
+3200	0.593	0.001	56.073
+
+simulation data for 20 trials
+grid	mean	stddev	total time
+100	0.593	0.014	0.158
+200	0.591	0.010	0.174
+400	0.590	0.006	0.870
+800	0.594	0.004	4.575
+1600	0.592	0.002	22.655
+3200	0.593	0.001	106.452
+
+
+Answer these questions for PercolateUF with a QuickUWPC union-find object
+
+How does doubling the grid size affect running time (keeping # trials fixed)
+
+Doubling the grid size multiplies run time by about 5. 
+
+How does doubling the number of trials affect running time.
+
+Doubling the number of trials roughly doubles the running time. The times
+for 20 trials are all about twice the times for 10 trials.
+
+Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.
+
+There are 86,400 seconds in 24 hours. You can multiply 106.452 seconds by 5 approximately 4 
+times before the total run time exceeds 86,400 seconds. Doubling 3200 four times gives a grid
+of size 51200. The largest grid size you can run in 24 hours with 20 trials is 51200.
+
